@@ -16,7 +16,6 @@ export class LoginComponent {
     password: new FormControl('', Validators.required),
   });
 
-  // Habilitar ou desabilitar o botão de enviar.
   submitted: boolean = false;
 
   constructor(private router: Router, private authService: AuthenticationService, private snackBar: MatSnackBar) { }

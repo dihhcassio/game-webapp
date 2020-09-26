@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FriendService } from 'src/app/shared/services/friend.service'
 
 @Component({
   selector: 'user-table',
@@ -7,11 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserTableComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'email'];
+  displayedColumns: string[] = ['name', 'phone', 'currentLoan'];
   dataSource = [];
 
-  // Importar snakebar e o service
-  constructor() { }
+  constructor(private service: FriendService) { }
 
   ngOnInit(): void {
     this.load();
@@ -19,21 +19,9 @@ export class UserTableComponent implements OnInit {
 
   load(){
     console.log('load');
-    /** Função para buscar os dados. */
-    // this.service.getAll().then((data) => {
-    //   this.dataSource = data // Onde a data é uma lista.
-    this.dataSource = [
-      {name: 'Hydrogen', email: 'hidro@email.com'},
-      {name: 'Hydrogen', email: 'hidro@email.com'},
-      {name: 'Hydrogen', email: 'hidro@email.com'},
-      {name: 'Hydrogen', email: 'hidro@email.com'},
-      {name: 'Hydrogen', email: 'hidro@email.com'},
-      {name: 'Hydrogen', email: 'hidro@email.com'},
-      {name: 'Hydrogen', email: 'hidro@email.com'},
-      {name: 'Hydrogen', email: 'hidro@email.com'},
-      {name: 'Hydrogen', email: 'hidro@email.com'},
-    ];
-    // })
+    this.service.all().then((data) => {
+      this.dataSource = data 
+    });
   }
 
 }
