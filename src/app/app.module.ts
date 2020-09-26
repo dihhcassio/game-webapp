@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared/auth.guard';
 import { JwtInterceptor } from './shared/jwt.interceptor';
+import { GameTableComponent } from './components/game-table/game-table.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GameTableComponent
   ],
   imports: [
     BrowserModule,

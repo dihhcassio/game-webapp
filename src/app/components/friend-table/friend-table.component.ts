@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FriendService } from 'src/app/shared/services/friend.service'
 
 @Component({
-  selector: 'user-table',
-  templateUrl: './user-table.component.html',
-  styleUrls: ['./user-table.component.css']
+  selector: 'friend-table',
+  templateUrl: './friend-table.component.html',
+  styleUrls: ['./friend-table.component.css']
 })
-export class UserTableComponent implements OnInit {
+export class FriendTableComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'phone', 'currentLoan'];
   dataSource = [];

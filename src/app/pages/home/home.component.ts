@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { UserTableComponent } from 'src/app/components/user-table/user-table.component';
+import { FriendTableComponent } from 'src/app/components/friend-table/friend-table.component';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import { UserTableComponent } from 'src/app/components/user-table/user-table.com
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild("userTable", {read: ElementRef, static: true}) userTable: UserTableComponent;
+  @ViewChild("friendTable", {read: ElementRef, static: true}) friendTable: FriendTableComponent;
   
   constructor() { }
 

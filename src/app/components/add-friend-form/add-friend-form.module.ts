@@ -5,10 +5,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { AddUserFormComponent } from './add-user-form.component';
+import { AddFriendFormComponent } from './add-friend-form.component';
 
 @NgModule({
-  declarations: [AddUserFormComponent],
+  declarations: [AddFriendFormComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -19,9 +19,9 @@ import { AddUserFormComponent } from './add-user-form.component';
     MatButtonModule,
   ],
   exports: [
-    AddUserFormComponent,
+    AddFriendFormComponent,
     MatInputModule,
     MatFormFieldModule,
   ]
 })
-export class AddUserFormModule { }
+export class AddFriendFormModule { }

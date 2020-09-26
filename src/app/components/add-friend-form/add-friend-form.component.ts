@@ -1,18 +1,18 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserTableComponent } from '../user-table/user-table.component';
+import { FriendTableComponent } from '../friend-table/friend-table.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FriendService } from 'src/app/shared/services/friend.service'
 
 @Component({
-  selector: 'add-user-form',
-  templateUrl: './add-user-form.component.html',
-  styleUrls: ['./add-user-form.component.css']
+  selector: 'add-friend-form',
+  templateUrl: './add-friend-form.component.html',
+  styleUrls: ['./add-friend-form.component.css']
 })
-export class AddUserFormComponent implements OnInit {
+export class AddFriendFormComponent implements OnInit {
 
   @Output() onAdd: EventEmitter<any> = new EventEmitter<any>();
-  @Input() table: UserTableComponent;
+  @Input() table: FriendTableComponent;
   submitted: boolean = false;
 
   public loginForm: FormGroup = new FormGroup({

@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { UserTableComponent } from './user-table.component';
+import { FriendTableComponent } from './friend-table.component';
 
 @NgModule({
-  declarations: [UserTableComponent],
-  exports: [UserTableComponent],
+  declarations: [FriendTableComponent],
+  exports: [FriendTableComponent],
   imports: [
     CommonModule,
     MatTableModule
   ]
 })
-export class UserTableModule { }
+export class FriendTableModule { }
