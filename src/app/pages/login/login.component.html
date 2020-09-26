@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="login-box">
+        <h2 style="color: #fff">Acessar o sistema</h2>
+        <br/>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+            <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" autocomplete="off" placeholder="Email" formControlName="email">
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <mat-label>Senha</mat-label>
+                <input matInput type="password" autocomplete="off" placeholder="Senha" formControlName="password">
+            </mat-form-field>
+
+            <br/>
+            <button mat-raised-button type="submit" [disabled]="submitted">Acessar</button>
+        </form>
+    </div>
+</div>
