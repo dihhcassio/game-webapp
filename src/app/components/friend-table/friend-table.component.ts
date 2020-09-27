@@ -18,7 +18,6 @@ export class FriendTableComponent implements OnInit {
   }
 
   load(){
-    console.log('load');
     this.service.all().then((data) => {
       this.dataSource = data 
     });

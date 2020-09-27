@@ -4,6 +4,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import { AddFriendFormModule } from 'src/app/components/add-friend-form/add-friend-form.module';
 import { FriendTableModule } from 'src/app/components/friend-table/friend-table.module';
+import { GameTableModule } from 'src/app/components/game-table/game-table.module';
+import { AddGameFormModule  } from 'src/app/components/add-game-form/add-game-form.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 
@@ -15,7 +17,9 @@ import { HomeComponent } from './home.component';
     MatTabsModule,
     MatExpansionModule,
     AddFriendFormModule,
-    FriendTableModule
+    FriendTableModule,
+    GameTableModule, 
+    AddGameFormModule
   ]
 })
 export class HomeModule { }

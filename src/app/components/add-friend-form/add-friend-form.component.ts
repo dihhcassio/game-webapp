@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FriendTableComponent } from '../friend-table/friend-table.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FriendService } from 'src/app/shared/services/friend.service'
+import { FriendService } from 'src/app/shared/services/friend.service';
 
 @Component({
   selector: 'add-friend-form',
