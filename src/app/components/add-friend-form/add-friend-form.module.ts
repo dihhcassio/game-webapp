@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AddFriendFormComponent } from './add-friend-form.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [AddFriendFormComponent],
@@ -17,6 +18,7 @@ import { AddFriendFormComponent } from './add-friend-form.component';
     MatSnackBarModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatSelectModule
   ],
   exports: [
     AddFriendFormComponent,

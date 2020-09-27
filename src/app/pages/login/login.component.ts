@@ -34,7 +34,6 @@ export class LoginComponent {
 
     this.submitted = true;
     this.authService.authenticate(this.f.value).then((resp) => {
-      console.log(resp.token);
       this.authService.token = resp.token;
       this.router.navigate(['home']);
     }).catch(() => { 

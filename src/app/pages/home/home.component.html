@@ -4,22 +4,22 @@
     <div style="margin:24px">
 
       <mat-accordion>
-        <mat-expansion-panel hideToggle>
+        <mat-expansion-panel [expanded]="expandedFriendForm" (opened)="openFromFriend()">
           <mat-expansion-panel-header>
             <mat-panel-title>
               Cadastrar Amigo
             </mat-panel-title>
           </mat-expansion-panel-header>     
-          <add-friend-form [table]="friendTable"></add-friend-form>     
+          <add-friend-form [table]="friendTable" [friend]="friend" (onDone)=sucessFromFriend()></add-friend-form>     
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel [expanded]="expandedFriendTable" (opened)="openTableFriend()">
           <mat-expansion-panel-header>
             <mat-panel-title>
               Amigos cadastrados
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <friend-table #friendTable></friend-table>     
+          <friend-table #friendTable (onEdit)="editFriend($event)"></friend-table>     
         </mat-expansion-panel>
         
       </mat-accordion>

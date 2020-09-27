@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from 'src/app/shared/auth.guard';
 
 const routes: Routes = [
-  // Mudar depois para canActive para proteger a rota.
-  // { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule), canActivate: [AuthGuard]},
-  { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)},
+  { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule), canActivate: [AuthGuard]},
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)},
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: '**', pathMatch: 'full', redirectTo: 'login' },

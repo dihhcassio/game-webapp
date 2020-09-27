@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class FriendService {
   }
 
   async get(id){
-    return await this._http.get<any>(`${this._api}/${id}`).toPromise();
+    return await this._http.get<any>(`${this._api}${id}`).toPromise();
   }
 
   async save(data){
@@ -26,7 +26,6 @@ export class FriendService {
     return await this._http.put<any>(`${this._api}`, data).toPromise();
   }
   async delete(data){
-    return await this._http.delete<any>(`${this._api}`, data).toPromise();
+    return await this._http.delete<any>(`${this._api}${data.id}`).toPromise();
   }
-
 }
