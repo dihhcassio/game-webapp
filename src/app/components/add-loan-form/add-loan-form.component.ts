@@ -1,10 +1,10 @@
 import { Component, EventEmitter, OnChanges, Input, OnInit, Output, SimpleChanges  } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { FriendTableComponent } from '../friend-table/friend-table.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { GameLoanService } from 'src/app/shared/services/game-loan.service';
 import { GameService } from 'src/app/shared/services/game.service';
 import { FriendService } from 'src/app/shared/services/friend.service';
+import { LoanTableComponent } from '../loan-table/loan-table.component';
 
 @Component({
   selector: 'add-loan-form',
@@ -13,7 +13,7 @@ import { FriendService } from 'src/app/shared/services/friend.service';
 })
 export class AddLoanFormComponent implements OnInit  {
   @Output() onDone: EventEmitter<any> = new EventEmitter<any>();
-  @Input() table: FriendTableComponent;
+  @Input() table: LoanTableComponent;
   submitted: boolean = false;
   listGames: [];
   listFriends: [];
@@ -43,7 +43,6 @@ export class AddLoanFormComponent implements OnInit  {
   }
 
   onSubmit() {
-    console.log(this.f.value);
     if (this.f.invalid) {
       this.snackBar.open('Verifique os campos preenchidos', 'OK', {
         duration: 2000,
@@ -62,15 +61,13 @@ export class AddLoanFormComponent implements OnInit  {
   }
 
   private lend(value) {
-
     this.service.lend(value).then((resp) => {
-      this.onDone.emit({success: true});
       this.createNewFieldForm();
-      this.table.load();
+      this.submitted = false;
       this.snackBar.open('Sucesso ao Adicionar', 'OK', {
         duration: 2000,
       });
-      this.submitted = false;
+      this.onDone.emit({success: true});
     }).catch(() => {
       this.snackBar.open('Falha ao adicionar', 'OK', {
         duration: 2000,

@@ -1,4 +1,4 @@
-<mat-tab-group mat-align-tabs="start">
+<mat-tab-group mat-align-tabs="start" (selectedIndexChange)="selectedIndexChange($event)">
   <mat-tab label="Amigos">
 
     <div style="margin:24px">
@@ -62,7 +62,7 @@
               Cadastrar Game
             </mat-panel-title>
           </mat-expansion-panel-header>     
-          <add-loan-form [table]="loanTable" (onDone)=sucessFromLoan()></add-loan-form>     
+          <add-loan-form #loanForm [table]="loanTable" (onDone)=sucessFromLoan()></add-loan-form>     
         </mat-expansion-panel>
 
         <mat-expansion-panel [expanded]="expandedLoanTable" (opened)="openTableLoan()">
@@ -71,7 +71,7 @@
               Games cadastrados
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <loan-table #gameTable (onEdit)="editLoan($event)"></loan-table>     
+          <loan-table #loanTable [form]="loanForm"></loan-table>     
         </mat-expansion-panel>
         
       </mat-accordion>

@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AddLoanFormComponent } from 'src/app/components/add-loan-form/add-loan-form.component';
 import { FriendTableComponent } from 'src/app/components/friend-table/friend-table.component';
 import { GameTableComponent } from 'src/app/components/game-table/game-table.component';
 import { LoanTableComponent } from 'src/app/components/loan-table/loan-table.component';
@@ -10,9 +11,10 @@ import { LoanTableComponent } from 'src/app/components/loan-table/loan-table.com
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild("friendTable", {read: ElementRef, static: true}) friendTable: FriendTableComponent;
-  @ViewChild("gameTable", {read: ElementRef, static: true}) gameTable: GameTableComponent;
-  @ViewChild("loanTable", {read: ElementRef, static: true}) loanTable: LoanTableComponent;
+  @ViewChild("friendTable") friendTable: FriendTableComponent;
+  @ViewChild("gameTable") gameTable: GameTableComponent;
+  @ViewChild("loanTable") loanTable: LoanTableComponent;
+  @ViewChild("loanForm") loanForm: AddLoanFormComponent;
   
   friend = null;
   expandedFriendForm = false;
@@ -22,9 +24,8 @@ export class HomeComponent implements OnInit {
   expandedGameForm = false;
   expandedGameTable = true;
 
-  loan = null;
   expandedLoanForm = false;
-  expandedLoanTable = true;
+  expandedLoanTable = true;  
 
   constructor() { }
 
@@ -51,6 +52,8 @@ export class HomeComponent implements OnInit {
   openTableFriend(){
     this.expandedFriendForm = false;
     this.expandedFriendTable = true;
+    if (this.friendTable != undefined)
+      this.friendTable.load();
   }
   
 
@@ -74,28 +77,39 @@ export class HomeComponent implements OnInit {
   openTableGame(){
     this.expandedGameForm = false;
     this.expandedGameTable = true;
+    if (this.gameTable != undefined)
+      this.gameTable.load();
   }
 
-
-  editLoan(value) {
-    this.expandedLoanForm = true;
-    this.expandedLoanTable = false;
-    this.loan = value;
-  }
-
-  sucessFromLoan(){
-    this.expandedLoanForm = false;
-    this.expandedLoanTable = true;
-    this.loan = null;
+  sucessFromLoan(){    
   }
 
   openFromLoan(){
     this.expandedLoanForm = true;
     this.expandedLoanTable = false;
+    if (this.loanForm != undefined)
+      this.loanForm.load();
   }
 
   openTableLoan(){
     this.expandedLoanForm = false;
     this.expandedLoanTable = true;
+    if (this.loanTable != undefined)
+      this.loanTable.load();
+  }
+
+  selectedIndexChange(event){
+    console.log(event);
+
+    if (event == 0){
+      if (this.friendTable != undefined)
+        this.friendTable.load();
+    } else if (event == 1){
+      if (this.gameTable != undefined)
+        this.gameTable.load();
+    } else if (event == 2){
+      if (this.loanTable != undefined)
+        this.loanTable.load();
+    }
   }
 }

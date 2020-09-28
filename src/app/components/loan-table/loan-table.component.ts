@@ -1,7 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import Swal from 'sweetalert2';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { GameLoanService } from 'src/app/shared/services/game-loan.service';
+import { AddLoanFormComponent } from '../add-loan-form/add-loan-form.component';
 
 @Component({
   selector: 'loan-table',
@@ -10,7 +11,8 @@ import { GameLoanService } from 'src/app/shared/services/game-loan.service';
 })
 export class LoanTableComponent implements OnInit {
 
-  @Output() onEdit: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onDone: EventEmitter<any> = new EventEmitter<any>();
+  @Input() form: AddLoanFormComponent;
 
   displayedColumns: string[] = ['status', 'deliveredDate', 'receivedDate', 'friend', 'game', 'action'];
   dataSource = [];
@@ -44,6 +46,7 @@ export class LoanTableComponent implements OnInit {
       if (result.isConfirmed) {
         this.service.toReceive(data).then((resp) => {
           this.load();
+          this.form.load();
           this.snackBar.open('Sucesso ao devolver', 'OK', {
             duration: 2000,
           });
