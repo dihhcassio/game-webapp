@@ -13,11 +13,11 @@ export class GameLoanService {
   constructor(private _http: HttpClient) { }
 
   async lend(data){
-    return await this._http.get<any>(`${this._api}lend`, data).toPromise();
+    return await this._http.post<any>(`${this._api}lend`, data).toPromise();
   }
 
   async toReceive(data){
-    return await this._http.get<any>(`${this._api}to-receive`, data).toPromise();
+    return await this._http.post<any>(`${this._api}to-receive`, data).toPromise();
   }
 
   async get(id){

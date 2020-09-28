@@ -1,18 +1,20 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
-import { FriendTableComponent } from './friend-table.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoanTableComponent } from './loan-table.component';
 import {MatIconModule} from '@angular/material/icon';
 
+
+
 @NgModule({
-  declarations: [FriendTableComponent],
-  exports: [FriendTableComponent],
+  declarations: [LoanTableComponent],
+  exports: [LoanTableComponent],
   imports: [
-    CommonModule,
+    CommonModule, 
     MatTableModule,
     MatSnackBarModule,
     MatIconModule
   ]
 })
-export class FriendTableModule { }
+export class LoanTableModule { }

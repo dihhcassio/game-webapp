@@ -30,27 +30,52 @@
     <div style="margin:24px">
 
       <mat-accordion>
-        <mat-expansion-panel hideToggle>
+        <mat-expansion-panel [expanded]="expandedGameForm" (opened)="openFromGame()">
           <mat-expansion-panel-header>
             <mat-panel-title>
               Cadastrar Game
             </mat-panel-title>
           </mat-expansion-panel-header>     
-          <add-game-form [table]="gameTable"></add-game-form>     
+          <add-game-form [table]="gameTable" [game]="game" (onDone)=sucessFromGame()></add-game-form>     
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel [expanded]="expandedGameTable" (opened)="openTableGame()">
           <mat-expansion-panel-header>
             <mat-panel-title>
               Games cadastrados
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <game-table #gameTable></game-table>     
+          <game-table #gameTable (onEdit)="editGame($event)"></game-table>     
         </mat-expansion-panel>
         
       </mat-accordion>
     </div>
 
   </mat-tab>
-  <mat-tab label="Empréstimos">Content 3</mat-tab>
+  <mat-tab label="Empréstimos">
+    <div style="margin:24px">
+
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="expandedLoanForm" (opened)="openFromLoan()">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Cadastrar Game
+            </mat-panel-title>
+          </mat-expansion-panel-header>     
+          <add-loan-form [table]="loanTable" (onDone)=sucessFromLoan()></add-loan-form>     
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="expandedLoanTable" (opened)="openTableLoan()">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Games cadastrados
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <loan-table #gameTable (onEdit)="editLoan($event)"></loan-table>     
+        </mat-expansion-panel>
+        
+      </mat-accordion>
+    </div>
+
+  </mat-tab>
 </mat-tab-group>

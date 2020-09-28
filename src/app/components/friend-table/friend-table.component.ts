@@ -32,10 +32,8 @@ export class FriendTableComponent implements OnInit {
   }
 
   delete(value){
-
-    console.log(value);
     Swal.fire({
-      title: 'Deseja realmente remover?',
+      title: 'Deseja realmente acabar com a amizade?',
       text: `Tem certeza que ${value.name} não é mais seu amigo?`,
       icon: 'warning',
       showCancelButton: true,
@@ -55,7 +53,7 @@ export class FriendTableComponent implements OnInit {
         })
         this.load();
       }
-    })
+    });
   }
 
 }

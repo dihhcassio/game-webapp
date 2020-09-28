@@ -26,6 +26,9 @@ export class GameService {
     return await this._http.put<any>(`${this._api}`, data).toPromise();
   }
   async delete(data){
-    return await this._http.delete<any>(`${this._api}`, data).toPromise();
+    return await this._http.delete<any>(`${this._api}${data.id}`, data).toPromise();
+  }
+  async available(){
+    return await this._http.get<any>(`${this._api}available`).toPromise();
   }
 }

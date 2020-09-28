@@ -1,0 +1,20 @@
+<form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Selecionar Amigo</mat-label>
+        <mat-select formControlName="friendId">
+            <mat-option *ngFor="let friend of listFriends" [value]="friend.id">{{friend.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    &nbsp;
+    &nbsp;
+    <mat-form-field appearance="fill">
+        <mat-label>Selecionar Jogo</mat-label>
+        <mat-select formControlName="gameId">
+            <mat-option *ngFor="let game of listGames" [value]="game.id">{{game.title}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <br/>
+    <button mat-raised-button type="submit" [disabled]="submitted">Emprestar</button> &nbsp;
+</form>

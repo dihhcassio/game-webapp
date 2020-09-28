@@ -31,7 +31,6 @@ export class AddFriendFormComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
     if (changes.friend != null) {
       this.showCancel = true;
       this.buttonLabel = "Editar";
@@ -88,8 +87,8 @@ export class AddFriendFormComponent implements OnInit, OnChanges {
   }
 
   cancelEdit() {
-    this.onDone.emit({success: false});
     this.createNewFieldForm();
+    this.onDone.emit({success: false});
   }
 
   private update(value) {

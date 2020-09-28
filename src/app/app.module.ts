@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared/auth.guard';
 import { JwtInterceptor } from './shared/jwt.interceptor';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { JwtInterceptor } from './shared/jwt.interceptor';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatIconModule
   ],
   providers: [
     AuthGuard,

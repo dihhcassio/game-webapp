@@ -1,41 +1,31 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-    <!-- Position Column -->
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Nome </th>
         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
 
-    <!-- Name Column -->
     <ng-container matColumnDef="phone">
         <th mat-header-cell *matHeaderCellDef> Celular </th>
         <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
     </ng-container>
 
-    <!-- Name Column -->
     <ng-container matColumnDef="currentLoan">
         <th mat-header-cell *matHeaderCellDef> Pegou emprestado </th>
         <td mat-cell *matCellDef="let element"> {{element.currentLoan != null ? element.currentLoan.gameTitle : ""}}
         </td>
     </ng-container>
 
-    <!-- Name Column -->
     <ng-container matColumnDef="action">
         <th width="120px" mat-header-cell *matHeaderCellDef> Ações </th>
         <td mat-cell *matCellDef="let element">
-            <!-- Icones
-                    https://material.io/resources/icons/?search=pen&icon=edit&style=baseline 
-            -->
             <button mat-icon-button (click)="edit(element)"
-                aria-label="Example icon button with a vertical three dot icon">
-                <mat-icon>Editar</mat-icon>
+                aria-label="Editar amigo">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
             </button>
             <button mat-icon-button (click)="delete(element)" color="primary"
-                aria-label="Example icon button with a home icon">
-                <mat-icon>Deletar</mat-icon>
+                aria-label="Remover amigo">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">delete_forever</mat-icon>
             </button>
         </td>
     </ng-container>

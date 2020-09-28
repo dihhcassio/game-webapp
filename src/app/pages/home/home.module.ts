@@ -8,6 +8,8 @@ import { GameTableModule } from 'src/app/components/game-table/game-table.module
 import { AddGameFormModule  } from 'src/app/components/add-game-form/add-game-form.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { AddLoanFormModule } from 'src/app/components/add-loan-form/add-loan-form.module';
+import { LoanTableModule } from 'src/app/components/loan-table/loan-table.module';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -19,7 +21,9 @@ import { HomeComponent } from './home.component';
     AddFriendFormModule,
     FriendTableModule,
     GameTableModule, 
-    AddGameFormModule
+    AddGameFormModule, 
+    AddLoanFormModule,
+    LoanTableModule
   ]
 })
 export class HomeModule { }
