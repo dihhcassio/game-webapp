@@ -33,7 +33,7 @@
         <mat-expansion-panel [expanded]="expandedGameForm" (opened)="openFromGame()">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Cadastrar Game
+              Cadastrar Jogo
             </mat-panel-title>
           </mat-expansion-panel-header>     
           <add-game-form [table]="gameTable" [game]="game" (onDone)=sucessFromGame()></add-game-form>     
@@ -42,7 +42,7 @@
         <mat-expansion-panel [expanded]="expandedGameTable" (opened)="openTableGame()">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Games cadastrados
+              Jogos cadastrados
             </mat-panel-title>
           </mat-expansion-panel-header>
           <game-table #gameTable (onEdit)="editGame($event)"></game-table>     
@@ -59,7 +59,7 @@
         <mat-expansion-panel [expanded]="expandedLoanForm" (opened)="openFromLoan()">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Cadastrar Game
+              Emprestar
             </mat-panel-title>
           </mat-expansion-panel-header>     
           <add-loan-form #loanForm [table]="loanTable" (onDone)=sucessFromLoan()></add-loan-form>     
@@ -68,7 +68,7 @@
         <mat-expansion-panel [expanded]="expandedLoanTable" (opened)="openTableLoan()">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Games cadastrados
+              Jogos Emprestados
             </mat-panel-title>
           </mat-expansion-panel-header>
           <loan-table #loanTable [form]="loanForm"></loan-table>     
