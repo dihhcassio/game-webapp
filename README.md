@@ -6,3 +6,10 @@ O docker compose esta usando uma imagem do docker hub para a api dihhcassio/game
 
 Para rodar a api apartir do source olhar: 
 https://github.com/dihhcassio/game-api
+
+# Tecnologias usadas
+ - Angular 10
+
+# Usuário para testes:
+ - email: teste1@teste.com
+ - password: 12345
